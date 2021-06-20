@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+
+    </head>
+    <script>
+        const testData = {
+            id:"boo",
+            data:{ example: "new data" }
+        }
+        const opts = {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(testData)
+        }
+        const go = ()=>{
+            fetch('http://localhost:3000/data',opts).then(
+                response => response.json()
+            ).then(
+                data => console.log(data)
+            );
+        }
+    </script>
+    <body>
+    <button onclick="go()">Go!</button>
+    </body>
+    </html>
